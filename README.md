@@ -1,7 +1,7 @@
 # File Organizer
 This Python script helps you organize your files by moving them to directories based on their file extensions.
 ## Requirements
-This script requires the following Python libraries:  
+This script requires Python and the following Python libraries:  
 'os'  
 'shutil'  
 You can install these libraries by running the command pip install -r requirements.txt. 
