@@ -16,3 +16,5 @@ File Organizer requires Python 3.10 or later and the following Python libraries:
 'os'  
 'shutil'  
 You can install these libraries by running the command pip install -r requirements.txt. 
+## Requesting Additional File Extensions
+If you would like to see support for a file extension that is not currently included in File Organizer, please submit a request by opening an issue in the project's GitHub repository. We will review all requests and consider adding support for the requested file extensions in future updates.
