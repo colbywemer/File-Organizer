@@ -63,8 +63,7 @@ for path in paths:
         print(f"There was an error creating folder \"{folder}\"")
 
 
-folders = {f.name for f in os.scandir(
-    src) if f.is_dir() and f.path not in paths}
+folders = {f.name for f in os.scandir(src) if f.is_dir() and f.path not in paths}
 
 
 for folder in folders:
