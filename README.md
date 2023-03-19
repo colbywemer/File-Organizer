@@ -13,7 +13,7 @@ Note: Make sure to have Python installed on your computer before running the scr
 ## Supported File Extensions
 
 ## Requirements
-File Organizer requires Python 3.10 or later and the following Python libraries:
-'os'
-'shutil'
-You can install these libraries by running the command pip install -r requirements.txt.
+File Organizer requires Python 3.10 or later and the following Python libraries: 
+'os' 
+'shutil' 
+You can install these libraries by running the command pip install -r requirements.txt. 
