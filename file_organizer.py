@@ -56,7 +56,7 @@ def check_file_extension(ext):
     for key in extension_dict.keys():
         if ext.endswith(key):
             return extension_dict[key]
-    return "misc"
+    return dirs["misc"]
 
 
 paths = dirs.values()
