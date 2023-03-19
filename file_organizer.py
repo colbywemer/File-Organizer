@@ -30,21 +30,21 @@ extension_dict = {
         ".rc", ".def", ".defn", ".hpp", ".cppm", ".icn", ".scrbl", ".ss", ".sc", ".cljs.hl", ".rkt", ".scm",
         ".rst", ".pxd", ".pyx", ".pxi", ".fut", ".futhark", ".sml", ".mlton"): dirs["code"],
     (".html", ".htm", ".xhtml", ".shtml", ".css", ".js", ".jsx", ".php", ".ttf", ".woff", ".otf",
-    ".asp", ".jsp", ".php8", ".php7", ".php5", ".ts", ".tsx", ".json", ".md", ".markdown", ".mdwn",
-    ".mdown", ".mkd", ".mkdn", ".xsl", ".dtd", ".ent", ".ipynb", ".rss", ".atom", ".svg", ".webp"): dirs["html"],
+        ".asp", ".jsp", ".php8", ".php7", ".php5", ".ts", ".tsx", ".json", ".md", ".markdown", ".mdwn",
+        ".mdown", ".mkd", ".mkdn", ".xsl", ".dtd", ".ent", ".ipynb", ".rss", ".atom", ".svg", ".webp"): dirs["html"],
     (".exe", ".jar", ".msi", ".app", ".dmg", ".sh",
-    ".bat", ".deb", ".rpm", ".ps", ".pssc", ".pkg"): dirs["exe"],
+        ".bat", ".deb", ".rpm", ".ps", ".pssc", ".pkg"): dirs["exe"],
     (".csv", ".xlsx", ".xls", ".ods", ".tsv", ".accdb", ".mdb", ".dbf"): dirs["excel"],
     (".mp4", ".avi", ".wmv", ".mov", ".flv", ".webm", ".mkv", ".m4v", ".3gp", ".3g2", ".mpg", ".mpeg",
-    ".m2v", ".mpe", ".vob", ".ogv", ".gifv", ".asf", ".rm", ".rmvb"): dirs["mp4"],
+        ".m2v", ".mpe", ".vob", ".ogv", ".gifv", ".asf", ".rm", ".rmvb"): dirs["mp4"],
     (".mp3", ".wav", ".aiff", ".aac", ".ogg", ".wma", ".flac", ".alac", ".m4a", ".m4b", ".opus", ".ra",
-    ".mid", ".midi", ".amr", ".pcm", ".wm"): dirs["mp3"],
+        ".mid", ".midi", ".amr", ".pcm", ".wm"): dirs["mp3"],
     (".ppt", ".pptx", ".odp"): dirs["ppt"],
     (".zip", ".rar", ".tar", ".gz", ".bz2", ".7z", ".xz", ".tar.gz", ".tgz", ".tar.bz2", ".tbz2",
-    ".tar.xz", ".txz", ".vcf", ".ics", ".tar.z"): dirs["zip"],
+        ".tar.xz", ".txz", ".vcf", ".ics", ".tar.z"): dirs["zip"],
     (".doc", ".docx", ".txt", ".rtf", ".odt", ".pdf"): dirs["doc"],
     (".jpg", ".png", ".jpeg", ".ico", ".gif", ".bmp", ".tif", ".tiff", ".raw", ".svgz", ".eps", ".ai",
-    ".psd"): dirs["img"],
+        ".psd"): dirs["img"],
 }
 
 
@@ -70,7 +70,8 @@ for path in paths:
         print(f"There was an error creating folder \"{folder}\"")
 
 
-folders = {f.name for f in os.scandir(src) if f.is_dir() and f.path not in paths}
+folders = {f.name for f in os.scandir(
+    src) if f.is_dir() and f.path not in paths}
 
 
 for folder in folders:
@@ -81,7 +82,8 @@ for folder in folders:
             if check_extension(src_path, key):
                 dest_path = os.path.join(value, folder)
                 shutil.move(src_path, dest_path)
-                print(f"Moved \"{folder}\" Folder To \"{os.path.basename(value)}\" Folder")
+                print(
+                    f"Moved \"{folder}\" Folder To \"{os.path.basename(value)}\" Folder")
                 break
         else:
             misc_path = os.path.join(dirs["misc"], folder)
@@ -98,6 +100,7 @@ for entry in os.scandir(src):
         try:
             entry_path = os.path.join(src, entry)
             shutil.move(entry_path, os.path.join(dst, entry.name))
-            print(f"Moved \"{entry.name}\" To \"{os.path.basename(dst)}\" Folder")
+            print(
+                f"Moved \"{entry.name}\" To \"{os.path.basename(dst)}\" Folder")
         except:
             print(f"There Was An Error Moving \"{entry.name}\"")
