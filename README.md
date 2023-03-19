@@ -15,6 +15,15 @@ You can install these libraries by running the command pip install -r requiremen
 3. Run the script by typing the following command and pressing Enter: python file_organizer.py
 4. The script will move all files with the corresponding extensions to their designated directories.
 ## Supported File Extensions
-
+***Images*** - .jpg, .png, .jpeg, .ico, .gif, .bmp, .tif, .tiff, .raw, .svgz, .eps, .ai, .psd  
+***Programs*** - .exe, .jar, .msi, .app, .dmg, .sh, .bat, .deb, .rpm, .ps, .pssc, .pkg  
+***Documents*** - .doc, .docx, .txt, .rtf, .odt, .pdf  
+***Compressed*** - .zip, .rar, .tar, .gz, .bz2, .7z, .xz, .tar.gz, .tgz, .tar.bz2, .tbz2, .tar.xz, .txz, .vcf, .ics, .tar.z  
+***Powerpoint*** - .ppt, .pptx, .odp  
+***Audio*** - .mp3, .wav, .aiff, .aac, .ogg, .wma, .flac, .alac, .m4a, .m4b, .opus, .ra, .mid, .midi, .amr, .pcm, .wm  
+***Video*** - .mp4, .avi, .wmv, .mov, .flv, .webm, .mkv, .m4v, .3gp, .3g2, .mpg, .mpeg, .m2v, .mpe, .vob, .ogv, .gifv, .asf, .rm, .rmvb  
+***Data*** - .csv, .xlsx, .xls, .ods, .tsv, .accdb, .mdb, .dbf  
+***Webpage*** - .html, .htm, .xhtml, shtml, .css, .js, .jsx, .xml, .php, .ttf, .woff, .otf, .asp, .jsp, .php8, .php7, .php5, .ts, .tsx, .json, .md, .markdown, .mdwn, .mdown, .mkd, .mkdn, .xsd, .xsl, .dtd, .ent, .ipynb, .rss, .atom, .svg, .webp  
+***Code*** - .java, .cpp, .h, .class, .py, .c, .cs, .m, .swift, .vb, .rb, .pl, .scala, .go, .kt, .rs, .lua, .ps1, .psm1, .psc1, .psc2, .d, .hs, .lhs, .mli, .ml, .mll, .mly, .r, .jl, .dart, .fs, .fsi, .fsx, .fsharp, .s, .asm, .sql, .vue, .bas, .clj, .cljs, .cljc, .groovy, .erl, .hrl, .ex, .exs, .mlp, .cmake, .yml, .yaml, .ini, .cfg, .conf, .tf, .tfvars, .tfstate, .tfstate.backup, .nim, .nimble, .nimrod, .v, .vh, .sv, .svh, .vhd, .xdc, .tcl, .perl, .pm, .t, .awk, .p, .pas, .las, .lp, .lsp, .scm, .st, .prg, .lst, .mod, .jcl, .mac, .f, .f90, .f95, .sas, .b, .dpr, .dproj, .groupproj, .bdsgroup, .bdsgroupitem, .dfm, .nfm, .ndk, .pk, .bpk, .res, .tlb, .tlh, .dcr, .dpk, .drc, .cbl, .cob, .cpy, .asm, .mac, .map, .mm, .pbxproj, .pbxuser, .xcworkspace, .xcworkspacedata, .xcscheme, .xcuserstate, .xib, .storyboard, .plist, .rc, .def, .defn, .hpp, .cppm, .icn, .scrbl, .ss, .sc, .cljs.hl, .rkt, .scm, .rst, .pxd, .pyx, .pxi, .fut, .futhark, .sml, .mlton
 ## Requesting Additional File Extensions
 If you would like to see support for a file extension that is not currently included in File Organizer, please submit a request by opening an issue in the project's GitHub repository. We will review all requests and consider adding support for the requested file extensions in future updates.
