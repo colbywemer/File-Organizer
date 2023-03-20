@@ -1,7 +1,17 @@
 import os
 import shutil
-# Define the source and destination directories
-src = os.path.join(os.path.expanduser("~"), "Downloads")
+src = ""
+
+user_input = input("Do you want to use the default configuration of organizing the downloads folder (y/n): ").lower()
+while not os.path.exists(src):
+    if user_input == "n" or user_input == "no":
+        directory = input("Please enter the exact file directory: ")
+        src = directory
+        if not os.path.exists(src):
+            print(f"Directory \"{src}\" Does Not Exist")
+    else:
+        src = os.path.join(os.path.expanduser("~"), "Downloads")
+# Define the destination directories
 dirs = {
     "img": os.path.join(src, "Images"),
     "exe": os.path.join(src, "Programs"),
@@ -59,20 +69,18 @@ def check_file_extension(ext):
     return dirs["misc"]
 
 
-paths = dirs.values()
-for path in paths:
+def check_if_folder_exists(directory):
     try:
-        if not os.path.exists(path):
-            os.makedirs(path)
-            folder = os.path.basename(path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            folder = os.path.basename(directory)
             print(f"Created Folder \"{folder}\"")
     except:
         print(f"There was an error creating folder \"{folder}\"")
 
 
-folders = {f.name for f in os.scandir(
-    src) if f.is_dir() and f.path not in paths}
-
+paths = dirs.values()
+folders = {f.name for f in os.scandir(src) if f.is_dir() and f.path not in paths}
 
 for folder in folders:
     try:
@@ -81,9 +89,9 @@ for folder in folders:
         for key, value in extension_dict.items():
             if check_extension(src_path, key):
                 dest_path = os.path.join(value, folder)
+                check_if_folder_exists(dest_path)
                 shutil.move(src_path, dest_path)
-                print(
-                    f"Moved \"{folder}\" Folder To \"{os.path.basename(value)}\" Folder")
+                print(f"Moved \"{folder}\" Folder To \"{os.path.basename(value)}\" Folder")
                 break
         else:
             misc_path = os.path.join(dirs["misc"], folder)
@@ -92,15 +100,16 @@ for folder in folders:
     except:
         print(f"There was an error moving \"{folder}\" Folder")
 
-
 for entry in os.scandir(src):
     if entry.is_file():
         ext = os.path.splitext(entry.name)[1].lower()
         dst = check_file_extension(ext)
+        check_if_folder_exists(dst)
         try:
             entry_path = os.path.join(src, entry)
             shutil.move(entry_path, os.path.join(dst, entry.name))
-            print(
-                f"Moved \"{entry.name}\" To \"{os.path.basename(dst)}\" Folder")
+            print(f"Moved \"{entry.name}\" To \"{os.path.basename(dst)}\" Folder")
         except:
             print(f"There Was An Error Moving \"{entry.name}\"")
+
+input("Script Finished! Press ENTER To Exit")
